@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Guía interactiva</title>
+<style>
+  :root{
+    --paper:#FBF8F2;
+    --card:#FFFFFF;
+    --ink:#22303C;
+    --ink-soft:#4A5A68;
+    --muted:#8A8478;
+    --line:#E4DFD1;
+    --red:#C0392B;
+    --red-soft:#F6E2DF;
+    --blue:#2F6690;
+    --blue-soft:#E1EBF1;
+    --mustard:#F2C14E;
+    --mustard-soft:#FDF3D9;
+    --green:#4C8C4A;
+    --green-soft:#E7F1E6;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .app{
+    display:flex;
+    min-height:100vh;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    width:250px;
+    flex-shrink:0;
+    padding:28px 14px 28px 20px;
+    border-right:1px solid var(--line);
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    overflow-y:auto;
+  }
+  .brand{
+    font-family:Georgia,"Iowan Old Style",serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--ink);
+    margin:0 0 2px 6px;
+  }
+  .brand-sub{
+    font-size:12px;
+    color:var(--muted);
+    margin:0 0 22px 6px;
+  }
+  .nav-group-label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    margin:18px 0 8px 6px;
+  }
+  .nav-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:2px;
+    transition:background 0.12s ease;
+  }
+  .nav-item:hover{background:var(--card);}
+  .nav-item.active{
+    background:var(--card);
+    color:var(--ink);
+    font-weight:600;
+    box-shadow:inset 3px 0 0 var(--red);
+  }
+  .nav-num{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--blue-soft);
+    color:var(--blue);
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .nav-item.active .nav-num{background:var(--red);color:#fff;}
+  .nav-check{
+    margin-left:auto;
+    color:var(--green);
+    font-size:13px;
+    opacity:0;
+  }
+  .nav-item.done .nav-check{opacity:1;}
+
+  /* ---------- Main ---------- */
+  .main{
+    flex:1;
+    padding:36px 44px 80px;
+    min-width:0;
+  }
+  .topic-head{
+    margin-bottom:26px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .topic-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    color:var(--red);
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .topic-title{
+    font-family:Georgia,"Iowan Old Style",serif;
+    font-size:30px;
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .topic-intro{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0;
+  }
+
+  /* rule cards */
+  .rules{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:36px;
+  }
+  .rule-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .rule-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px 18px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .rule-title{
+    font-weight:600;
+    font-size:15px;
+    flex:1;
+  }
+  .formula-badge{
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+    font-size:12px;
+    background:var(--mustard-soft);
+    color:#7A5A00;
+    padding:4px 10px;
+    border-radius:7px;
+    white-space:nowrap;
+  }
+  .chevron{
+    color:var(--muted);
+    font-size:14px;
+    transition:transform 0.15s ease;
+    flex-shrink:0;
+  }
+  .rule-card.open .chevron{transform:rotate(90deg);}
+  .rule-body{
+    display:none;
+    padding:0 18px 18px 18px;
+    border-top:1px solid var(--line);
+  }
+  .rule-card.open .rule-body{display:block;padding-top:14px;}
+  .rule-explain{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .rule-example{
+    background:var(--blue-soft);
+    border-left:3px solid var(--blue);
+    padding:10px 14px;
+    border-radius:0 8px 8px 0;
+    font-size:14.5px;
+    font-style:italic;
+    color:var(--ink);
+  }
+  .rule-note{
+    font-size:13px;
+    color:var(--red);
+    margin-top:8px;
+  }
+
+  /* practice section */
+  .practice-section{
+    margin-top:8px;
+  }
+  .practice-label{
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--muted);
+    margin-bottom:12px;
+  }
+  .flash{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 26px 20px;
+    min-height:120px;
+    cursor:pointer;
+    position:relative;
+  }
+  .flash-count{
+    position:absolute;
+    top:16px;
+    right:20px;
+    font-size:12px;
+    color:var(--muted);
+  }
+  .flash-sentence{
+    font-size:17px;
+    line-height:1.5;
+    margin:0 0 8px;
+    padding-right:50px;
+  }
+  .flash-hint{
+    font-size:12px;
+    color:var(--muted);
+  }
+  .flash-answer{
+    display:none;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px dashed var(--line);
+  }
+  .flash.revealed .flash-answer{display:block;}
+  .flash.revealed .flash-hint{display:none;}
+  .badge-C{
+    display:inline-block;
+    background:var(--green-soft);
+    color:var(--green);
+    font-weight:700;
+    font-size:13px;
+    padding:3px 12px;
+    border-radius:20px;
+    margin-right:8px;
+  }
+  .badge-I{
+    display:inline-block;
+    background:var(--red-soft);
+    color:var(--red);
+    font-weight:700;
+    font-size:13px;
+    padding:3px 12px;
+    border-radius:20px;
+    margin-right:8px;
+  }
+  .flash-note{
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .flash-nav{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .flash-btn{
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+    padding:8px 16px;
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .flash-btn:hover{background:var(--paper);}
+
+  /* tips lists (listening/reading) */
+  .tip-item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    margin-bottom:10px;
+  }
+  .tip-item-title{
+    font-weight:700;
+    font-size:14.5px;
+    color:var(--blue);
+    margin:0 0 6px;
+  }
+  .tip-item-d{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* mobile */
+  .mobile-nav-toggle{display:none;}
+  @media(max-width:820px){
+    .app{flex-direction:column;}
+    .sidebar{
+      width:100%;
+      height:auto;
+      position:relative;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:16px 14px;
+      display:flex;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      gap:6px;
+      align-items:center;
+    }
+    .brand,.brand-sub,.nav-group-label{display:none;}
+    .nav-item{
+      flex-shrink:0;
+      white-space:nowrap;
+      margin-bottom:0;
+    }
+    .main{padding:24px 18px 60px;}
+    .topic-title{font-size:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+const TOPICS = [
+{
+  id: "participios",
+  num: "1",
+  title: "Participios",
+  intro: "Una palabra en -ing o -ed puede ser VERBO o ADJETIVO. La diferencia es simple: si tiene un to be/have justo antes, es parte del verbo. Si no, es adjetivo.",
+  rules: [
+    {
+      title: "-ing con to be = verbo",
+      formula: "BE + -ing",
+      explain: "Si el -ing está acompañado de am/is/are/was/were, es el verbo de la oración (tiempo progresivo).",
+      example: "The man IS TALKING to his friend.",
+      note: "\"talking\" es VERBO porque tiene \"is\" antes."
+    },
+    {
+      title: "-ing solo = adjetivo",
+      formula: "( ) + -ing",
+      explain: "Si el -ing NO tiene ningún to be antes, funciona como adjetivo que describe al sustantivo.",
+      example: "The man TALKING to his friend has a beard.",
+      note: "acá el verbo real es \"has\"; \"talking\" es adjetivo."
+    },
+    {
+      title: "-ed con have/be = verbo",
+      formula: "HAVE/BE + -ed",
+      explain: "Igual lógica que el -ing, pero para el pasado participio: necesita have o be antes para ser verbo.",
+      example: "The family HAS PURCHASED a television. / The poem WAS WRITTEN by Paul.",
+    },
+    {
+      title: "-ed solo = adjetivo",
+      formula: "( ) + -ed",
+      explain: "Sin have/be antes, el -ed es adjetivo.",
+      example: "The television PURCHASED yesterday was expensive.",
+      note: "el verbo real es \"was\"; \"purchased\" es adjetivo."
+    },
+    {
+      title: "El truco más importante",
+      formula: "¿ya hay un verbo?",
+      explain: "Si la oración YA tiene un verbo conjugado, la palabra en -ing/-ed que falta ubicar es casi siempre adjetivo. Poner otro to be generaría dos verbos, y eso está mal.",
+      example: "The child ___ playing in the yard is my son. → va \"now\", no otro verbo.",
+    }
+  ],
+  practice: [
+    { sentence: "The fraternities are giving the wildest parties attract the most new pledges.", answer: "I", note: "dos verbos: \"are giving\" y \"attract\". \"giving\" debería ir sin \"are\" (adjetivo)." },
+    { sentence: "The first team winning four games is awarded the championship.", answer: "C" },
+    { sentence: "The chapters were taught by the professor this morning will be on next week's exam.", answer: "I", note: "dos verbos: \"were taught\" y \"will be\". Sacar el primer \"were\"." },
+    { sentence: "Those suspected in the string of robberies were arrested by the police.", answer: "C" },
+  ]
+},
+{
+  id: "concordancia",
+  num: "2",
+  title: "Concordancia sujeto-verbo",
+  intro: "La clave siempre es encontrar el sujeto REAL, no la palabra más cercana al verbo. Hay 4 trampas típicas.",
+  rules: [
+    {
+      title: "Frases preposicionales en el medio",
+      formula: "tachá preposición+objeto",
+      explain: "Si hay una preposición entre el sujeto y el verbo, esa frase no es el sujeto. Hay que \"borrarla\" mentalmente.",
+      example: "The board OF DIRECTORS has called a meeting.",
+      note: "el sujeto real es \"the board\" (singular) → \"has\"."
+    },
+    {
+      title: "Expresiones de cantidad (all/most/some/half)",
+      formula: "verbo concuerda con lo que sigue a \"of the\"",
+      explain: "El verbo no concuerda con \"all/most/some/half\" sino con el sustantivo que viene después de \"of the\".",
+      example: "Half of the FOOD... IS still in the fridge.",
+      note: "\"food\" es incontable/singular → \"is\", no \"are\"."
+    },
+    {
+      title: "Verbos invertidos (V+S)",
+      formula: "pregunta / negativo / lugar / sin-if / comparación → V+S",
+      explain: "Después de estas estructuras, el verbo va primero y el sujeto después, pero igual tienen que concordar entre sí.",
+      example: "Around the corner IS the room. / Around the corner ARE the rooms.",
+    },
+    {
+      title: "Pronombres indefinidos siempre singular",
+      formula: "any-/every-/no-/some- + each/every+sust.",
+      explain: "anybody, everybody, nobody, somebody, anyone, everyone, no one, someone, anything, everything, nothing, something, each, every: todos van con verbo en SINGULAR, aunque el significado parezca plural.",
+      example: "Everybody participating in the fund-raiser IS to turn in the tickets.",
+    }
+  ],
+  practice: [
+    { sentence: "Some of the animals from the zoo was released into the animal preserve.", answer: "I", note: "\"animals\" es plural → debería ir \"were\"." },
+    { sentence: "All of the witnesses in the jury trial have indicated that they believed the defendant was guilty.", answer: "C" },
+    { sentence: "Seldom in the history of television has two new comedies been so successful.", answer: "I", note: "\"two new comedies\" es plural → debería ir \"have\"." },
+    { sentence: "Every man, woman, and child in this line are required to sign the forms.", answer: "I", note: "\"every...\" → singular → debería ir \"is required\"." },
+  ]
+},
+{
+  id: "paralelismo",
+  num: "3",
+  title: "Estructura paralela",
+  intro: "Cuando hay una lista, un par fijo (both/and, either/or...) o una comparación, TODOS los elementos tienen que tener la misma forma gramatical.",
+  rules: [
+    {
+      title: "and / but / or",
+      formula: "elemento A [and/but/or] elemento B (misma forma)",
+      explain: "Verbo con verbo (en la misma forma), sustantivo con sustantivo, adjetivo con adjetivo.",
+      example: "She held jobs as a typist, a housekeeper, and A WAITRESS.",
+      note: "no \"in a restaurant\" (eso rompe el paralelismo)."
+    },
+    {
+      title: "Pares fijos — nunca se mezclan",
+      formula: "both...and / either...or / neither...nor / not only...but also",
+      explain: "Cada palabra del par va SIEMPRE con su pareja correspondiente. Mezclarlas (neither...or, both...or) es error automático.",
+      example: "She would like NEITHER to see a movie NOR to go bowling.",
+    },
+    {
+      title: "Comparaciones",
+      formula: "more...than / as...as / the same...as",
+      explain: "Los dos términos comparados deben tener la misma estructura gramatical (ambos gerundios, ambos sustantivos, etc.)",
+      example: "Dining in a restaurant is more fun than EATING at home.",
+      note: "no \"than to eat\" (gerundio vs infinitivo rompe el paralelismo)."
+    }
+  ],
+  practice: [
+    { sentence: "It would be both noticed and appreciated if you could finish the work before you leave.", answer: "C" },
+    { sentence: "Both the tailor or the laundress could fix the damage to the dress.", answer: "I", note: "\"both...or\" mal combinado; debe ser \"both...and\" o \"either...or\"." },
+    { sentence: "Sam is always good-natured, generous, and helps you.", answer: "I", note: "\"helps you\" no es paralelo con los adjetivos; debería ser \"helpful\"." },
+    { sentence: "You have less homework than they do.", answer: "C" },
+  ]
+},
+{
+  id: "formas-verbales",
+  num: "4",
+  title: "Formas verbales (have / be / modales)",
+  intro: "Estas 3 palabras exigen SIEMPRE una forma específica del verbo siguiente. Es mecánico: si no coincide, está mal.",
+  rules: [
+    {
+      title: "HAVE",
+      formula: "have/has/had + past participle",
+      explain: "Siempre la 3ra forma del verbo (participio), nunca simple past ni base.",
+      example: "Tom HAS THOUGHT about taking that job.",
+    },
+    {
+      title: "BE",
+      formula: "be + -ing (activo) / be + past participle (pasivo)",
+      explain: "Con -ing forma el tiempo progresivo. Con past participle forma la voz pasiva.",
+      example: "We ARE DOING our homework. / The homework WAS DONE early.",
+    },
+    {
+      title: "MODAL",
+      formula: "can/could/should/may/might/would/will/must + forma base",
+      explain: "Sin -s, sin -ing, sin -ed. Siempre el verbo \"pelado\".",
+      example: "The boat will LEAVE at 3:00.",
+      note: "no \"leaving\" ni \"leaves\"."
+    },
+    {
+      title: "Combinaciones",
+      formula: "modal + have + past participle / modal + be + past participle",
+      explain: "Cuando se combinan, el orden es: modal + have + participio, o modal + be + participio (pasiva con modal).",
+      example: "You should HAVE FINISHED earlier. / The report should HAVE BEEN SUBMITTED by noon.",
+    }
+  ],
+  practice: [
+    { sentence: "The secretary has broke her typewriter.", answer: "I", note: "debe ser \"has broken\"." },
+    { sentence: "The Smiths are build their house on some property.", answer: "I", note: "debe ser \"are building\"." },
+    { sentence: "The machine may clicks off if it is overused.", answer: "I", note: "debe ser \"may click\"." },
+    { sentence: "All the tickets for the concert might already be sold.", answer: "I", note: "falta \"have\": \"might already HAVE been sold\"." },
+  ]
+},
+{
+  id: "perfectos",
+  num: "5",
+  title: "Perfectos y expresiones de tiempo",
+  intro: "Present perfect y past perfect no son intercambiables: cada uno tiene sus propias marcas de tiempo que lo acompañan.",
+  rules: [
+    {
+      title: "Present perfect",
+      formula: "have/has + past participle",
+      explain: "Acción que va desde el pasado hasta AHORA. Se lleva bien con: since, lately, already, just, yet, ever, never, so far.",
+      example: "Now that I HAVE FINISHED, I can go out.",
+    },
+    {
+      title: "Past perfect",
+      formula: "had + past participle",
+      explain: "Acción anterior a OTRO momento del pasado. Se lleva bien con: by + fecha pasada, before/after + pasado.",
+      example: "After I HAD FINISHED, I could go out.",
+    },
+    {
+      title: "Marcas que exigen simple past",
+      formula: "ago / last... / in + año pasado",
+      explain: "Estas expresiones nunca van con present perfect, solo con pasado simple.",
+      example: "The cashier put the money into the account two hours AGO.",
+    }
+  ],
+  practice: [
+    { sentence: "They have finished contacting everyone by 4:00 yesterday.", answer: "I", note: "con \"by + hora pasada\" debería ser past perfect: \"had finished\"." },
+    { sentence: "The students are writing many compositions lately.", answer: "I", note: "con \"lately\" debería ser present perfect: \"have been writing\"." },
+    { sentence: "All the votes have been counted last week.", answer: "I", note: "con \"last week\" debería ser simple past: \"were counted\"." },
+    { sentence: "By the time the main course was served, all the guests had arrived.", answer: "C" },
+  ]
+},
+{
+  id: "preposiciones",
+  num: "6",
+  title: "Preposiciones y falsos sujetos",
+  intro: "El objeto de una preposición NUNCA puede ser el sujeto de la oración, aunque esté al principio.",
+  rules: [
+    {
+      title: "Tachá las preposicionales",
+      formula: "prep. + objeto = no es sujeto",
+      explain: "Para encontrar el sujeto real, primero \"borrá\" mentalmente todas las frases preposicionales.",
+      example: "(After his exams) Tom will take a trip (by boat).",
+      note: "el sujeto real es \"Tom\", no \"exams\" ni \"boat\"."
+    },
+    {
+      title: "Oración sin sujeto",
+      formula: "solo preposicionales = falta sujeto",
+      explain: "Si después de tachar las preposicionales no queda nada, la oración está incompleta.",
+      example: "Departure before dawn on a boat in the middle of the harbor.",
+      note: "falta sujeto + verbo."
+    }
+  ],
+  practice: [
+    { sentence: "A schedule of the day's events can be obtained at the front desk.", answer: "C" },
+    { sentence: "The assigned text for history class it contains more than twenty chapters.", answer: "I", note: "dos sujetos: \"the assigned text\" e \"it\"." },
+    { sentence: "Yesterday found an interesting article on pollution.", answer: "I", note: "\"yesterday\" no puede ser sujeto." },
+    { sentence: "For the last three years at various hospitals in the county has been practicing medicine.", answer: "I", note: "todo es preposicional, falta sujeto." },
+  ]
+},
+{
+  id: "apositivos",
+  num: "7",
+  title: "Apositivos",
+  intro: "Un apositivo es un sustantivo entre comas que repite el significado de otro sustantivo cercano. Nunca es el sujeto ni el verbo.",
+  rules: [
+    {
+      title: "Cómo reconocerlo",
+      formula: "S, APP, V",
+      explain: "Si sacás la frase entre comas y la oración sigue teniendo sentido completo, esa frase era un apositivo.",
+      example: "Sally, THE BEST STUDENT IN THE CLASS, got an A.",
+      note: "sujeto = \"Sally\"; apositivo = \"the best student...\"."
+    },
+    {
+      title: "También puede ir al principio",
+      formula: "APP, S V",
+      explain: "El apositivo no siempre va después del sujeto; puede abrir la oración.",
+      example: "AN EXCELLENT BASKETBALL PLAYER, Sarah rarely misses her shots.",
+    }
+  ],
+  practice: [
+    { sentence: "Valentine's Day, February 14, is a special holiday for sweethearts.", answer: "C" },
+    { sentence: "At long last, the chief executive officer, has decided to step down.", answer: "I", note: "la coma no corresponde a un apositivo válido." },
+    { sentence: "A longtime friend and confidant, the psychologist was often invited over for dinner.", answer: "C", note: "apositivo al inicio." },
+    { sentence: "In the cold of winter, a wall heating unit, would not turn on.", answer: "I", note: "coma sin apositivo válido." },
+  ]
+},
+{
+  id: "conectores",
+  num: "8",
+  title: "Conectores",
+  intro: "Todo conector une dos cláusulas, cada una con su propio sujeto y verbo. La diferencia entre tipos está en dónde va la coma.",
+  rules: [
+    {
+      title: "Coordinantes: and, but, or, so, yet",
+      formula: "S V, [conector] S V",
+      explain: "La coma SIEMPRE va en el medio, antes del conector.",
+      example: "She laughed, BUT she wanted to cry.",
+    },
+    {
+      title: "Adverbiales de tiempo/causa/condición/contraste",
+      formula: "S V [conector] S V   ó   [Conector] S V, S V",
+      explain: "after, because, since, although, if, unless, while, etc. La coma es OPCIONAL: solo va si el conector está al principio.",
+      example: "Teresa went inside because it was raining. / Because it was raining, Teresa went inside.",
+    },
+    {
+      title: "WH-connectors (what, who, which, that...)",
+      formula: "contá sujetos y verbos a cada lado",
+      explain: "Cada WH-word tiene 2 a 5 estructuras posibles. La forma de resolverlo es contar cuántos S y V hay antes y después del WH-word.",
+      example: "I don't know WHAT the homework IS. (S+V normal, sin inversión)",
+    }
+  ],
+  practice: [
+    { sentence: "Not once did I miss a question.", answer: "C", note: "inversión correcta tras negativo al inicio." },
+    { sentence: "The president appoints the cabinet, but their appointments are subject to Senate approval.", answer: "C" },
+    { sentence: "I don't know what the homework is.", answer: "C", note: "pregunta indirecta: sin inversión." },
+    { sentence: "He asked me when I will be able to leave.", answer: "I", note: "\"will\" debería ser \"would\" (verbo introductorio en pasado)." },
+  ]
+},
+{
+  id: "inversion",
+  num: "9",
+  title: "Estructuras invertidas",
+  intro: "En ciertos casos el orden normal S+V se invierte a V+S. Pasa en preguntas, negativos al inicio, condicionales sin \"if\" y comparaciones.",
+  rules: [
+    {
+      title: "Preguntas directas",
+      formula: "V + S",
+      explain: "El auxiliar/modal va antes del sujeto. Si no hay auxiliar, se agrega do/does/did.",
+      example: "CAN he go to the movies? / WHAT IS the homework?",
+    },
+    {
+      title: "Negativos al inicio",
+      formula: "never/rarely/hardly/seldom + V + S",
+      explain: "Cuando la oración arranca con una palabra negativa, se invierte igual que en una pregunta.",
+      example: "NEVER HAS Mr. Jones taken a vacation.",
+    },
+    {
+      title: "Condicionales sin \"if\"",
+      formula: "Had/Were/Should + S + V (sin if)",
+      explain: "Solo funciona si el verbo original era had, were o should.",
+      example: "HAD HE TAKEN more time, the results would have been better.",
+    }
+  ],
+  practice: [
+    { sentence: "Around the corner and to the right is the rooms that have been assigned.", answer: "I", note: "\"the rooms\" es plural → debería ir \"are\"." },
+    { sentence: "Had he taken more time, the results would have been better.", answer: "C" },
+    { sentence: "My sister spends more hours in the office than does John.", answer: "C", note: "comparación con inversión, también correcta." },
+    { sentence: "In the parking lot south of the stadium was the cars that were about to be towed.", answer: "I", note: "\"the cars\" es plural → debería ir \"were\"." },
+  ]
+},
+{
+  id: "tiempos-pasiva",
+  num: "11",
+  title: "Secuencia de tiempos y voz pasiva",
+  intro: "Tres reglas más para cerrar: mezclar pasado con presente, will vs would, y la forma de la voz pasiva.",
+  rules: [
+    {
+      title: "Pasado + presente",
+      formula: "solo ok si el presente es atemporal",
+      explain: "Si el presente describe un hábito/verdad general, puede convivir con un pasado puntual. Si ambos verbos deberían estar en la misma línea de tiempo, no se puede mezclar.",
+      example: "She IS where she IS today because she WORKED hard when she WAS a student.",
+    },
+    {
+      title: "WILL vs WOULD",
+      formula: "will → con presente / would → con pasado",
+      explain: "Si el verbo introductorio (said, knew, thought, realized) está en pasado, lo que sigue usa WOULD, no WILL.",
+      example: "He knew that he WOULD be able to pass the exam.",
+    },
+    {
+      title: "Voz pasiva",
+      formula: "be + past participle (+ by + agente)",
+      explain: "Si el sujeto RECIBE la acción, necesita esta estructura completa. Un -ed suelto sin \"be\" antes no alcanza.",
+      example: "The report should HAVE BEEN SUBMITTED by noon.",
+    }
+  ],
+  practice: [
+    { sentence: "When he was a child, he always goes to the circus.", answer: "I", note: "debería ser \"went\" (pasado)." },
+    { sentence: "After last week's meeting, the department realized that the product will need a new slogan.", answer: "I", note: "\"realized\" en pasado → \"will\" debería ser \"would\"." },
+    { sentence: "The package containing the necessary samples has just sent.", answer: "I", note: "debe ser \"has just been sent\"." },
+    { sentence: "The physics exam began just a few minutes ago.", answer: "C" },
+  ]
+},
+{
+  id: "estrategia",
+  num: "12",
+  title: "Estrategia general",
+  intro: "Cuando no sepas por dónde arrancar con una oración, aplicá estos 3 pasos en orden.",
+  rules: [
+    {
+      title: "Paso 1 — Estructura",
+      formula: "¿hay sujeto y verbo, sin duplicados?",
+      explain: "La mayoría de los errores son de acá: falta sujeto, falta verbo, o hay dos de uno de los dos.",
+    },
+    {
+      title: "Paso 2 — Forma del verbo",
+      formula: "¿la forma coincide con lo que la precede?",
+      explain: "Revisar have/be/modal + la forma correcta, y que el tiempo verbal tenga sentido con el contexto.",
+    },
+    {
+      title: "Paso 3 — Paralelismo y conectores",
+      formula: "¿hay listas, pares fijos o comparaciones?",
+      explain: "Recién si los dos pasos anteriores no resuelven la duda, revisar paralelismo y conectores.",
+    }
+  ],
+  practice: []
+},
+];
+
+const LISTENING_TIPS = [
+  { t: "Part A — diálogos cortos", d: "Cuidado con sonidos parecidos (thirteen/thirty), repetición de una palabra clave en una opción INCORRECTA, y respuestas indirectas/irónicas (\"I wouldn't say no to that\" = sí quiere)." },
+  { t: "Part B — conversaciones largas", d: "La primera pregunta casi siempre es el tema general. Prestá atención a números, fechas y nombres propios." },
+  { t: "Part C — mini-charlas", d: "Las preguntas siguen el ORDEN CRONOLÓGICO del audio. La primera oración suele anunciar el tema completo." },
+  { t: "Regla de oro", d: "Si te perdiste una palabra, seguí escuchando. Quedarte pensando en ella te hace perder el resto de la oración." },
+];
+
+const READING_TIPS = [
+  { t: "Idea principal", d: "Mirá la primera oración del texto y la última. Cuidado con opciones que son un detalle, no el tema central." },
+  { t: "Detalles específicos", d: "Buscá (scan) la palabra clave de la pregunta en el texto, no releas todo." },
+  { t: "Vocabulario en contexto", d: "Reemplazá la palabra por cada opción y fijate cuál mantiene el sentido de ESA oración puntual." },
+  { t: "Inferencia", d: "Desconfiá de opciones extremas (always, never, all) cuando el texto usa lenguaje más suave (often, some, may)." },
+  { t: "Estrategia de tiempo", d: "Leé el primer/último párrafo completos + la primera oración de cada párrafo intermedio. Después andá a las preguntas." },
+];
+
+</script>
+<script>
+let currentTopic = TOPICS[0].id;
+const visited = new Set();
+
+function renderSidebar(){
+  const sb = document.getElementById('sidebar');
+  let html = '<p class="brand">TOEFL ITP</p><p class="brand-sub">Guía interactiva de repaso</p>';
+  html += '<p class="nav-group-label">Structure &amp; Written Expression</p>';
+  TOPICS.forEach(t=>{
+    const active = t.id===currentTopic ? 'active':'';
+    const done = visited.has(t.id) ? 'done':'';
+    html += `<div class="nav-item ${active} ${done}" data-id="${t.id}">
+      <span class="nav-num">${t.num}</span>
+      <span>${t.title}</span>
+      <span class="nav-check">&#10003;</span>
+    </div>`;
+  });
+  html += '<p class="nav-group-label">Otras secciones</p>';
+  html += `<div class="nav-item ${currentTopic==='listening'?'active':''} ${visited.has('listening')?'done':''}" data-id="listening">
+    <span class="nav-num">13</span><span>Listening</span><span class="nav-check">&#10003;</span></div>`;
+  html += `<div class="nav-item ${currentTopic==='reading'?'active':''} ${visited.has('reading')?'done':''}" data-id="reading">
+    <span class="nav-num">14</span><span>Reading</span><span class="nav-check">&#10003;</span></div>`;
+  sb.innerHTML = html;
+  sb.querySelectorAll('.nav-item').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      currentTopic = el.dataset.id;
+      visited.add(currentTopic);
+      renderSidebar();
+      renderMain();
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+}
+
+function ruleCardHTML(r, idx){
+  return `<div class="rule-card" data-idx="${idx}">
+    <div class="rule-head">
+      <span class="rule-title">${r.title}</span>
+      <span class="formula-badge">${r.formula}</span>
+      <span class="chevron">&#8250;</span>
+    </div>
+    <div class="rule-body">
+      <p class="rule-explain">${r.explain}</p>
+      ${r.example ? `<div class="rule-example">${r.example}</div>` : ''}
+      ${r.note ? `<p class="rule-note">${r.note}</p>` : ''}
+    </div>
+  </div>`;
+}
+
+let flashIndex = 0;
+
+function renderMain(){
+  const main = document.getElementById('main');
+
+  if(currentTopic==='listening' || currentTopic==='reading'){
+    const isListening = currentTopic==='listening';
+    const data = isListening ? LISTENING_TIPS : READING_TIPS;
+    let html = `<div class="topic-head">
+      <span class="topic-eyebrow">${isListening?'13':'14'} · Tips</span>
+      <h1 class="topic-title">${isListening?'Listening Comprehension':'Reading Comprehension'}</h1>
+      <p class="topic-intro">${isListening?'Los patrones más frecuentes en las 3 partes del Listening, para que sepas qué escuchar.':'Los 5 tipos de pregunta más comunes y cómo resolver cada uno sin perder tiempo.'}</p>
+    </div>`;
+    html += '<div class="rules">';
+    data.forEach(item=>{
+      html += `<div class="tip-item"><p class="tip-item-title">${item.t}</p><p class="tip-item-d">${item.d}</p></div>`;
+    });
+    html += '</div>';
+    main.innerHTML = html;
+    return;
+  }
+
+  const topic = TOPICS.find(t=>t.id===currentTopic);
+  flashIndex = 0;
+  let html = `<div class="topic-head">
+    <span class="topic-eyebrow">Tema ${topic.num}</span>
+    <h1 class="topic-title">${topic.title}</h1>
+    <p class="topic-intro">${topic.intro}</p>
+  </div>`;
+  html += '<div class="rules">';
+  topic.rules.forEach((r,idx)=>{ html += ruleCardHTML(r, idx); });
+  html += '</div>';
+
+  if(topic.practice.length){
+    html += `<div class="practice-section">
+      <p class="practice-label">Practicá esta sección</p>
+      <div class="flash" id="flash"></div>
+    </div>`;
+  }
+
+  main.innerHTML = html;
+
+  main.querySelectorAll('.rule-card').forEach(card=>{
+    card.querySelector('.rule-head').addEventListener('click', ()=>{
+      card.classList.toggle('open');
+    });
+  });
+
+  if(topic.practice.length){ renderFlash(topic); }
+}
+
+function renderFlash(topic){
+  const el = document.getElementById('flash');
+  const item = topic.practice[flashIndex];
+  el.classList.remove('revealed');
+  el.innerHTML = `
+    <span class="flash-count">${flashIndex+1} / ${topic.practice.length}</span>
+    <p class="flash-sentence">${item.sentence}</p>
+    <p class="flash-hint">Tocá para ver la respuesta</p>
+    <div class="flash-answer">
+      <span class="badge-${item.answer}">${item.answer==='C' ? 'Correcta' : 'Incorrecta'}</span>
+      ${item.note ? `<span class="flash-note">${item.note}</span>` : ''}
+    </div>
+    <div class="flash-nav">
+      <button class="flash-btn" id="flash-prev">&#8592; Anterior</button>
+      <button class="flash-btn" id="flash-next">Siguiente &#8594;</button>
+    </div>
+  `;
+  el.addEventListener('click', function revealOnce(e){
+    if(e.target.closest('.flash-btn')) return;
+    el.classList.toggle('revealed');
+  });
+  document.getElementById('flash-prev').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    flashIndex = (flashIndex - 1 + topic.practice.length) % topic.practice.length;
+    renderFlash(topic);
+  });
+  document.getElementById('flash-next').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    flashIndex = (flashIndex + 1) % topic.practice.length;
+    renderFlash(topic);
+  });
+}
+
+visited.add(currentTopic);
+renderSidebar();
+renderMain();
+</script>
+
+</body>
+</html>
