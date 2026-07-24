@@ -1,0 +1,119 @@
+======================================================================
+ARCHIVO DE CONTROL MAESTRO
+Periodo: 17/07/2026 al 23/07/2026
+Total novedades: 8
+Provincias procesadas: 24/24
+======================================================================
+
+RESUMEN POR PROVINCIA:
+--------------------------------------------------
+  Buenos Aires              0 novedad(es)
+  CABA                      3 novedad(es)
+  Catamarca                 0 novedad(es)
+  Chaco                     0 novedad(es)
+  Chubut                    0 novedad(es)
+  Córdoba                   0 novedad(es)
+  Corrientes                0 novedad(es)
+  Entre Ríos                0 novedad(es)
+  Formosa                   0 novedad(es)
+  Jujuy                     0 novedad(es)
+  La Pampa                  0 novedad(es)
+  La Rioja                  0 novedad(es)
+  Mendoza                   2 novedad(es)
+  Misiones                  0 novedad(es)
+  Neuquén                   0 novedad(es)
+  Río Negro                 0 novedad(es)
+  Salta                     0 novedad(es)
+  San Juan                  0 novedad(es)
+  San Luis                  0 novedad(es)
+  Santa Cruz                0 novedad(es)
+  Santa Fe                  0 novedad(es)
+  Santiago del Estero       2 novedad(es)
+  Tierra del Fuego          1 novedad(es)
+  Tucumán                   0 novedad(es)
+
+==================================================
+CABA
+==================================================
+
+  Resolución N° 727/MHFGC/26
+  Fecha: 20/07/2026 | Score: 6
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (6):
+    -> código fiscal
+    -> agip
+    -> impuesto
+    -> tasas
+    -> brutos
+    -> alícuota
+
+  Resolución N° 262/AGIP/26
+  Fecha: 20/07/2026 | Score: 4
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (4):
+    -> código fiscal
+    -> agip
+    -> impuesto
+    -> brutos
+
+  Resolución N° 270/AGIP/26
+  Fecha: 21/07/2026 | Score: 4
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (4):
+    -> código fiscal
+    -> agip
+    -> impuesto
+    -> tasas
+
+==================================================
+MENDOZA
+==================================================
+
+  Resolución N°: 33
+  Fecha: 22/07/2026 | Score: 4
+  Organismo: administración tributaria mendoza
+  Palabras clave (4):
+    -> impuesto
+    -> ingresos brutos
+    -> código fiscal
+    -> ley impositiva
+
+  Ley N°: 9718
+  Fecha: 23/07/2026 | Score: 4
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (4):
+    -> impuesto
+    -> tasa
+    -> alícuota
+    -> exencion
+
+==================================================
+SANTIAGO DEL ESTERO
+==================================================
+
+  DECRETO-2026-1179-E-GDESDE
+  Fecha: 17/07/2026 | Score: 2
+  Organismo: dgr
+  Palabras clave (2):
+    -> impuesto
+    -> dgr
+
+  DECRETO-2026-1189-E-GDESDE-
+  Fecha: 20/07/2026 | Score: 2
+  Organismo: dgr
+  Palabras clave (2):
+    -> agregado
+    -> dgr
+
+==================================================
+TIERRA DEL FUEGO
+==================================================
+
+  RESOLUCIÓN GENERAL AREF N° 464/26.
+  Fecha: 21/07/2026 | Score: 4
+  Organismo: AREF
+  Palabras clave (4):
+    -> ingresos brutos
+    -> impuesto
+    -> fiscal
+    -> contribuyente

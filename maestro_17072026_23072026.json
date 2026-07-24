@@ -1,0 +1,53 @@
+{
+  "periodo": {
+    "desde": "2026-07-17",
+    "hasta": "2026-07-23"
+  },
+  "total_novedades": 9,
+  "provincias_con_novedades": [
+    {
+      "provincia": "CABA",
+      "cantidad": 3
+    },
+    {
+      "provincia": "Córdoba",
+      "cantidad": 1
+    },
+    {
+      "provincia": "Mendoza",
+      "cantidad": 2
+    },
+    {
+      "provincia": "Santiago del Estero",
+      "cantidad": 2
+    },
+    {
+      "provincia": "Tierra del Fuego",
+      "cantidad": 1
+    }
+  ],
+  "provincias_sin_novedades": [
+    "Buenos Aires",
+    "Catamarca",
+    "Chubut",
+    "Corrientes",
+    "Entre Ríos",
+    "Formosa",
+    "Jujuy",
+    "La Rioja",
+    "Misiones",
+    "Neuquén",
+    "Río Negro",
+    "Salta",
+    "San Juan",
+    "San Luis",
+    "Santa Cruz",
+    "Santa Fe",
+    "Tucumán"
+  ],
+  "provincias_sin_reporte": [
+    "Chaco",
+    "La Pampa"
+  ],
+  "provincias_con_error": []
+}
