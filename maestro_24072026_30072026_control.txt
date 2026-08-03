@@ -1,0 +1,178 @@
+======================================================================
+ARCHIVO DE CONTROL MAESTRO
+Periodo: 24/07/2026 al 30/07/2026
+Total novedades: 19
+Provincias procesadas: 24/24
+======================================================================
+
+RESUMEN POR PROVINCIA:
+--------------------------------------------------
+  Buenos Aires              0 novedad(es)
+  CABA                      2 novedad(es)
+  Catamarca                 1 novedad(es)
+  Chaco                     0 novedad(es)
+  Chubut                    1 novedad(es)
+  Córdoba                   2 novedad(es)
+  Corrientes                0 novedad(es)
+  Entre Ríos                0 novedad(es)
+  Formosa                   0 novedad(es)
+  Jujuy                     4 novedad(es)
+  La Pampa                  0 novedad(es)
+  La Rioja                  0 novedad(es)
+  Mendoza                   1 novedad(es)
+  Misiones                  0 novedad(es)
+  Neuquén                   0 novedad(es)
+  Río Negro                 1 novedad(es)
+  Salta                     0 novedad(es)
+  San Juan                  1 novedad(es)
+  San Luis                  0 novedad(es)
+  Santa Cruz                0 novedad(es)
+  Santa Fe                  3 novedad(es)
+  Santiago del Estero       2 novedad(es)
+  Tierra del Fuego          0 novedad(es)
+  Tucumán                   1 novedad(es)
+
+==================================================
+CABA
+==================================================
+
+  Resolución N° 285/AGIP/26
+  Fecha: 28/07/2026 | Score: 6
+  Organismo: Ministerio De Hacienda Y Finanzas
+  Palabras clave (0):
+
+  Resolución N° 284/AGIP/26
+  Fecha: 28/07/2026 | Score: 4
+  Organismo: Ministerio De Hacienda Y Finanzas
+  Palabras clave (0):
+
+==================================================
+CATAMARCA
+==================================================
+
+  N.º 021
+  Fecha: 24/07/2026 | Score: 4
+  Organismo: Dirección General De Rentas
+  Palabras clave (0):
+
+==================================================
+CHUBUT
+==================================================
+
+  Ley XXIV N° 124
+  Fecha: 27/07/2026 | Score: 3
+  Organismo: Agencia De Recaudación De La Provincia Del Chubut
+  Palabras clave (0):
+
+==================================================
+CÓRDOBA
+==================================================
+
+  Resolución General N° 2227
+  Fecha: 27/07/2026 | Score: 7
+  Organismo: Dirección General De Rentas
+  Palabras clave (0):
+
+  Resolución Normativa N° 36
+  Fecha: 27/07/2026 | Score: 3
+  Organismo: Dirección General De Rentas
+  Palabras clave (0):
+
+==================================================
+JUJUY
+==================================================
+
+  RESOLUCION GENERAL Nº 1764-DPR/2026.-
+  Fecha: 29/07/2026 | Score: 4
+  Organismo: Dpr
+  Palabras clave (0):
+
+  RESOLUCIÓN N° 1144-DPR/2026.-
+  Fecha: 24/07/2026 | Score: 3
+  Organismo: Dpr
+  Palabras clave (0):
+
+  RESOLUCIÓN N° 1146-DPR/2026.-
+  Fecha: 24/07/2026 | Score: 3
+  Organismo: Dpr
+  Palabras clave (0):
+
+  RESOLUCIÓN N° 1147 DPR/2026.-
+  Fecha: 24/07/2026 | Score: 3
+  Organismo: Dirección Provincial De Rentas
+  Palabras clave (0):
+
+==================================================
+MENDOZA
+==================================================
+
+  Resolución N°: 34
+  Fecha: 27/07/2026 | Score: 5
+  Organismo: Administración Tributaria Mendoza
+  Palabras clave (0):
+
+==================================================
+RÍO NEGRO
+==================================================
+
+  RESOL-2026-480-E-GDERNE-DE#ART
+  Fecha: 30/07/2026 | Score: 2
+  Organismo: Agencia De Recaudación Tributaria
+  Palabras clave (0):
+
+==================================================
+SAN JUAN
+==================================================
+
+  RESOLUCIÓN N' 1294-DGR-2026
+  Fecha: 27/07/2026 | Score: 4
+  Organismo: Dirección General De Rentas
+  Palabras clave (0):
+
+==================================================
+SANTA FE
+==================================================
+
+  RESOLUCIÓN N° 00124/2026
+  Fecha: 30/07/2026 | Score: 6
+  Organismo: Administración Provincial De Impuestos (Api)
+  Palabras clave (0):
+
+  RESOLUCIÓN N° 00121/2026
+  Fecha: 24/07/2026 | Score: 4
+  Organismo: Administración Provincial De Impuestos (Api)
+  Palabras clave (0):
+
+  RESOLUCIÓN N° 0122/2026
+  Fecha: 27/07/2026 | Score: 2
+  Organismo: Administración Provincial De Impuestos (Api)
+  Palabras clave (0):
+
+==================================================
+SANTIAGO DEL ESTERO
+==================================================
+
+  RESOLUCION RESOL-2026-30-E-GDESDE-DGR
+  Fecha: 30/07/2026 | Score: 3
+  Organismo: dgr
+  Palabras clave (3):
+    -> impuesto
+    -> inmobiliario
+    -> dgr
+
+  RESOLUCION RESOL-2026-31-E-GDESDE-DGR
+  Fecha: 30/07/2026 | Score: 3
+  Organismo: dgr
+  Palabras clave (3):
+    -> impuesto
+    -> automotor
+    -> dgr
+
+==================================================
+TUCUMÁN
+==================================================
+
+  Resolución General (DGR) N° 45/26 - Complementaria RG (DGR) Nros. 18/26 y 23/26.
+  Fecha: 29/07/2026 | Score: 2
+  Organismo: Dirección General De Rentas
+  Palabras clave (0):
