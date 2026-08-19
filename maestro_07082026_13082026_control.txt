@@ -1,0 +1,132 @@
+======================================================================
+ARCHIVO DE CONTROL MAESTRO
+Periodo: 07/08/2026 al 13/08/2026
+Total novedades: 8
+Provincias procesadas: 23/24
+======================================================================
+
+RESUMEN POR PROVINCIA:
+--------------------------------------------------
+  Buenos Aires              0 novedad(es)
+  CABA                      0 novedad(es)
+  Catamarca                 0 novedad(es)
+  Chaco                     0 novedad(es)
+  Chubut                    1 novedad(es)
+  Córdoba                   1 novedad(es)
+  Corrientes                1 novedad(es)
+  Entre Ríos                0 novedad(es)
+  Formosa                   0 novedad(es)
+  Jujuy                     0 novedad(es)
+  La Pampa                  0 novedad(es)
+  La Rioja                  0 novedad(es)
+  Mendoza                   0 novedad(es)
+  Misiones                  0 novedad(es)
+  Neuquén                   1 novedad(es)
+  Río Negro                 0 novedad(es)
+  Salta                     0 novedad(es)
+  San Juan                  1 novedad(es)
+  San Luis                  0 novedad(es)
+  Santa Cruz                0 novedad(es)
+  Santa Fe                  0 novedad(es)
+  Santiago del Estero       -- sin reporte
+  Tierra del Fuego          0 novedad(es)
+  Tucumán                   3 novedad(es)
+
+==================================================
+CHUBUT
+==================================================
+
+  Resolución N° 901
+  Fecha: 07/08/2026 | Score: 3
+  Organismo: agencia de recaudación de la provincia del chubut
+  Palabras clave (3):
+    -> sellos
+    -> beneficios fiscales
+    -> domicilio fiscal
+
+==================================================
+CÓRDOBA
+==================================================
+
+  Resolución N° 14 - Letra:D
+  Fecha: 07/08/2026 | Score: 2
+  Organismo: secretaría de ingresos públicos
+  Palabras clave (2):
+    -> convenio
+    -> tasas
+
+==================================================
+CORRIENTES
+==================================================
+
+  Resolución General (D.G.R.) Nº 310/2.026
+  Fecha: 13/08/2026 | Score: 4
+  Organismo: dirección general de rentas
+  Palabras clave (4):
+    -> impuesto
+    -> brutos
+    -> retención
+    -> percepción
+
+==================================================
+NEUQUÉN
+==================================================
+
+  RESOLUCIÓN N° 255/DPR/26
+  Fecha: 07/08/2026 | Score: 6
+  Organismo: dirección provincial de rentas
+  Palabras clave (6):
+    -> Ingresos Brutos
+    -> IIBB
+    -> percepción
+    -> retención
+    -> Impuesto al valor agregado
+    -> IVA
+
+==================================================
+SAN JUAN
+==================================================
+
+  RESOLUCION N° 44
+  Fecha: 12/08/2026 | Score: 7
+  Organismo: dirección general de rentas
+  Palabras clave (7):
+    -> ingresos brutos
+    -> sellos
+    -> impuesto sobre los ingresos
+    -> resolución general
+    -> retención
+    -> percepción
+    -> contribuyente
+
+==================================================
+TUCUMÁN
+==================================================
+
+  Decreto N° 1743/3 (MEyP)-2026 - Prórroga vigencia Decreto N&ordm 1243/3 (ME)-2021 hasta el 31 de Agosto de 2026.
+  Fecha: 07/08/2026 | Score: 8
+  Organismo: Ministerio de Economía y Producción
+  Palabras clave (8):
+    -> impuesto
+    -> ingresos brutos
+    -> retenciones
+    -> percepciones
+    -> regularización
+    -> deudas fiscales
+    -> obligaciones tributarias
+    -> prorroga
+
+  Decreto N° 1744/3 (MEyP)-2026 - Modificatoria Decreto N&ordm 1013/3 (MEyP)-2025. Régimen de Regularización de Deudas Fiscales. Actividad de transporte automotor urbano e interurbano de pasajeros desarrollada en Tucumán.
+  Fecha: 07/08/2026 | Score: 3
+  Organismo: Ministerio de Economía y Producción
+  Palabras clave (3):
+    -> regularización
+    -> deudas fiscales
+    -> prórroga
+
+  Resolución General (DGR) N° 47/26 - Complementaria RG (DGR) N&ordm 59/21. Aprobación programa aplicativo "Régimen de Regularización de Deudas Fiscales DCTO N° 1243/3(ME)-2021- Versión 60.0".
+  Fecha: 07/08/2026 | Score: 2
+  Organismo: Dirección General de Rentas
+  Palabras clave (2):
+    -> regularización
+    -> deudas fiscales
