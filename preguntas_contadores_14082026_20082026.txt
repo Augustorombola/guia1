@@ -1,0 +1,87 @@
+PREGUNTAS PARA EL EQUIPO DE IMPUESTOS
+Origen: cruce del reporte del sistema vs. Deloitte, semana 14/08-20/08/2026
+======================================================================
+
+1) JUJUY - RG 1289-DPR/2026 (exencion de Ingresos Brutos a "contribuyentes
+   que se individualizan en el Anexo I")
+
+   YA SE SACO el filtro que la excluia (pedido explicito, 21/08/2026): a
+   partir de ahora el sistema SI va a traer este tipo de resolucion.
+
+   OJO: ese filtro se habia creado a proposito el 05/08/2026 porque los
+   contadores habian excluido 3 resoluciones de Jujuy con la MISMA
+   redaccion ("contribuyentes que se individualizan en el Anexo", Ley
+   6491 art.14 "nuevo contribuyente"): RG 1144, 1146 y 1147-DPR/2026. Al
+   sacar el filtro, si vuelve a aparecer ese patron el sistema ahora
+   TAMBIEN las va a traer -- eso no es un error, es la consecuencia
+   directa de haber sacado el filtro.
+
+   PREGUNTA PARA LOS CONTADORES: ¿que diferencia a la RG 1289 (que SI
+   quieren ver) de las RG 1144/1146/1147 (que en agosto NO querian ver)?
+   Las dos usan la misma frase legal. Si nos dicen el criterio real (por
+   ejemplo, la cantidad de contribuyentes listados en el Anexo, o algo
+   especifico de esas 3 resoluciones que las hacia puntuales), se puede
+   volver a armar un filtro mas preciso que distinga automaticamente
+   "exencion nominal puntual" (excluir) de "regimen de exencion abierto"
+   (incluir) en vez de traerlas todas.
+
+----------------------------------------------------------------------
+
+2) NEUQUEN - Decreto 1182/2026 (Plan de Desarrollo Industrial y
+   Productivo, Ley 3502 "Invierta Neuquen")
+
+   Ya resuelto: se sumaron a Neuquen (solo a Neuquen, por pedido puntual)
+   las palabras clave "incentivo/incentivos", "beneficio fiscal/beneficios
+   fiscales", "promocion industrial", "regimen de promocion", para que
+   decretos de este tipo (promocion industrial con beneficios fiscales,
+   sin mencionar un impuesto puntual como IIBB/sellos/IVA) pasen a
+   detectarse.
+
+   PREGUNTA (para confirmar el criterio, no bloqueante): ¿este tipo de
+   decreto de promocion industrial es algo que el equipo quiere ver
+   reportado en general para TODAS las provincias, o es realmente una
+   excepcion puntual de Neuquen? Si en el futuro aparece un caso similar
+   en otra provincia y el sistema no lo trae, probablemente sea por esto
+   mismo (la ampliacion se hizo SOLO en Neuquen a proposito, siguiendo lo
+   que se pidio).
+
+----------------------------------------------------------------------
+
+3) CORRIENTES - RG (D.G.R.) N° 308/2026 y N° 310/2026
+
+   El sistema las trae (score 4 cada una: impuesto/brutos/retencion/
+   percepcion) pero Deloitte no informo ninguna novedad de Corrientes esta
+   semana.
+
+   Leyendo el texto completo de ambas: son resoluciones GENERALES que
+   redefinen los parametros de aplicacion (sujetos pasibles, condiciones
+   de habitualidad) de dos regimenes ya existentes de Percepcion/Retencion
+   del Impuesto sobre los Ingresos Brutos (uno para operaciones por
+   Internet, otro para Administradores de Sistemas de Pago). No nombran
+   ningun contribuyente puntual -- no parecen encajar en ninguno de los
+   filtros de "caso individual" que ya tenemos.
+
+   PREGUNTA: ¿estas dos son novedades que el equipo SI quiere ver
+   reportadas (y Deloitte simplemente no las incluyo esta vez por
+   criterio editorial propio) o son el tipo de ajuste "menor"/tecnico que
+   el equipo prefiere que el sistema tambien empiece a filtrar? Si es lo
+   segundo, hace falta que nos digan que las hace "menores" para poder
+   armar un filtro (ej. ¿"redefinir parametros de un regimen existente"
+   sin cambiar la alicuota ni crear un regimen nuevo?).
+
+   Mientras no este resuelto, el sistema las sigue incluyendo (no se toco
+   el codigo).
+
+======================================================================
+Ya resueltos esta semana (sin necesidad de confirmar nada):
+  - CABA: se agrego un filtro general para actos de compra/contratacion
+    interna del propio organismo (la Disposicion 82/AGIP, renovacion de
+    una suscripcion editorial, matcheaba "sellos" por "sellos editoriales"
+    -- nada que ver con el Impuesto de Sellos).
+  - Rio Negro: se recupero la Resolucion 525/2026 (actualizacion general
+    de valuaciones fiscales del Impuesto a los Automotores), que se
+    perdia en silencio por un bug de particionado (el dia de la semana
+    impreso antes de la fecha -- "Cipolletti, Jueves 13 de..." -- rompia
+    el limite de cierre del bloque anterior).
+  - Santa Fe: la Resolucion 140/2026 se deja como esta (confirmado que
+    corresponde incluirla).
