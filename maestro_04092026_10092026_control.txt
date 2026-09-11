@@ -1,0 +1,192 @@
+======================================================================
+ARCHIVO DE CONTROL MAESTRO
+Periodo: 04/09/2026 al 10/09/2026
+Total novedades: 16
+Provincias procesadas: 24/24
+======================================================================
+
+RESUMEN POR PROVINCIA:
+--------------------------------------------------
+  Buenos Aires              0 novedad(es)
+  CABA                      6 novedad(es)
+  Catamarca                 1 novedad(es)
+  Chaco                     1 novedad(es)
+  Chubut                    0 novedad(es)
+  Córdoba                   0 novedad(es)
+  Corrientes                0 novedad(es)
+  Entre Ríos                0 novedad(es)
+  Formosa                   0 novedad(es)
+  Jujuy                     0 novedad(es)
+  La Pampa                  0 novedad(es)
+  La Rioja                  0 novedad(es)
+  Mendoza                   0 novedad(es)
+  Misiones                  0 novedad(es)
+  Neuquén                   2 novedad(es)
+  Río Negro                 0 novedad(es)
+  Salta                     0 novedad(es)
+  San Juan                  0 novedad(es)
+  San Luis                  0 novedad(es)
+  Santa Cruz                1 novedad(es)
+  Santa Fe                  0 novedad(es)
+  Santiago del Estero       0 novedad(es)
+  Tierra del Fuego          1 novedad(es)
+  Tucumán                   4 novedad(es)
+
+==================================================
+CABA
+==================================================
+
+  Resolución N° 339/AGIP/26
+  Fecha: 08/09/2026 | Score: 6
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (6):
+    -> código fiscal
+    -> ingresos brutos
+    -> agip
+    -> impuesto
+    -> RIMI
+    -> brutos
+
+  Resolución N° 1710/DGR/26
+  Fecha: 10/09/2026 | Score: 5
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (5):
+    -> código fiscal
+    -> ingresos brutos
+    -> agip
+    -> impuesto
+    -> brutos
+
+  Ley N° 6.515........................................................................................
+  Fecha: 04/09/2026 | Score: 2
+  Organismo: jefatura de gabinete de ministros
+  Palabras clave (2):
+    -> mecenazgo
+    -> patrocinio deportivo
+
+  Resolución N° 338/AGIP/26
+  Fecha: 07/09/2026 | Score: 2
+  Organismo: ministerio de hacienda y finanzas
+  Palabras clave (2):
+    -> agip
+    -> RIMI
+
+  Ley N° 6.515........................................................................................
+  Fecha: 07/09/2026 | Score: 2
+  Organismo: jefatura de gabinete de ministros
+  Palabras clave (2):
+    -> mecenazgo
+    -> patrocinio deportivo
+
+  Resolución N° 325/SECD/26
+  Fecha: 08/09/2026 | Score: 2
+  Organismo: jefatura de gabinete de ministros
+  Palabras clave (2):
+    -> mecenazgo
+    -> patrocinio deportivo
+
+==================================================
+CATAMARCA
+==================================================
+
+  N.º 26
+  Fecha: 08/09/2026 | Score: 5
+  Organismo: dirección general de rentas
+  Palabras clave (5):
+    -> Impuesto
+    -> Ingresos brutos
+    -> Convenio
+    -> Retención
+    -> Agente
+
+==================================================
+CHACO
+==================================================
+
+  RESOLUCION GENERAL Nº 20 26-21-20-1 de fecha 03/09/2026
+  Fecha: 07/09/2026 | Score: 2
+  Organismo: administracion tributaria provincial
+  Palabras clave (1):
+    -> (anexo imagen ATP, sin keywords extraibles)
+
+==================================================
+NEUQUÉN
+==================================================
+
+  DECRETO N° 1282
+  Fecha: 04/09/2026 | Score: 4
+  Organismo: poder ejecutivo
+  Palabras clave (4):
+    -> percepción
+    -> incentivo
+    -> incentivos
+    -> régimen de promoción
+
+  RESOLUCIÓN N° 302/DPR/26
+  Fecha: 04/09/2026 | Score: 3
+  Organismo: dirección provincial de rentas
+  Palabras clave (3):
+    -> Ingresos Brutos
+    -> sellos
+    -> beneficios fiscales
+
+==================================================
+SANTA CRUZ
+==================================================
+
+  RESOLUCIÓN N° 123
+  Fecha: 08/09/2026 | Score: 2
+  Organismo: asip
+  Palabras clave (2):
+    -> brutos
+    -> ingresos brutos
+
+==================================================
+TIERRA DEL FUEGO
+==================================================
+
+  RESOLUCIÓN GENERAL AREF N° 617/26.-
+  Fecha: 09/09/2026 | Score: 3
+  Organismo: AREF
+  Palabras clave (3):
+    -> ingresos brutos
+    -> impuesto
+    -> contribuyente
+
+==================================================
+TUCUMÁN
+==================================================
+
+  Decreto N° 2021/3 (MEyP)-2026 - Prórroga vigencia Decreto N&ordm 1243/3 (ME)-2021 hasta el 30 de Septiembre de 2026.
+  Fecha: 07/09/2026 | Score: 8
+  Organismo: Ministerio de Economía y Producción
+  Palabras clave (8):
+    -> impuesto
+    -> ingresos brutos
+    -> retenciones
+    -> percepciones
+    -> regularización
+    -> deudas fiscales
+    -> obligaciones tributarias
+    -> prorroga
+
+  Decreto N° 2022/3 (MEyP)-2026 - Modificatoria Decreto N&ordm 1013/3 (MEyP)-2025. Régimen de Regularización de Deudas Fiscales. Actividad de transporte automotor urbano e interurbano de pasajeros desarrollada en Tucumán.
+  Fecha: 07/09/2026 | Score: 3
+  Organismo: Ministerio de Economía y Producción
+  Palabras clave (3):
+    -> regularización
+    -> deudas fiscales
+    -> prórroga
+
+  Resolución General (DGR) N° 51/26 - Complementaria RG (DGR) N&ordm 59/21. Aprobación programa aplicativo "Régimen de Regularización de Deudas Fiscales DCTO N° 1243/3(ME)-2021- Versión 61.0".
+  Fecha: 08/09/2026 | Score: 2
+  Organismo: Dirección General de Rentas
+  Palabras clave (2):
+    -> regularización
+    -> deudas fiscales
+
+  Decreto N° 2008/3 (MEyP)-2026 - Importes fijados para cuota 3 del período fiscal 2026. Artículos 50 y 51 Ley Impositiva. Tasa al Uso Especial del Agua.
+  Fecha: 10/09/2026 | Score: 1
+  Organismo: Ministerio de Economía y Producción
+  Palabras clave (1):
+    -> tasa
